@@ -1,0 +1,16 @@
+<div></div>
+<br /><br />
+
+
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+
+  <div class="card" *ngFor="let team of teams">
+    <img src="{{ team.image }}" width="400px" class="img-fluid" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">{{ team.team }}</h5>
+      <p class="card-text">
+        {{ team.players }}
+      </p>
+    </div>
+  </div>
+</div>

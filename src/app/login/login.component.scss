@@ -1,0 +1,32 @@
+
+  input {
+    display: block;
+    margin: auto auto;
+    width: 35%;
+    margin-bottom: 2em;
+    padding: 0.5em 0;
+    border: none;
+    border-bottom: 2px solid #ff0000;
+    padding-bottom: 1.25em;
+    color: #000000;
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      &:hover {
+        background-color: rgb(255, 171, 171);
+      }      }
+  }
+  .submitBtn{
+    display: block;
+    margin: auto auto;
+    width: 50%;
+    margin-bottom: 2em;
+    padding: 0.5em 5px;
+    border: none;
+    padding-bottom: 1.25em;
+    color: #757575;
+    &:focus {
+      outline: none;
+    }
+  }

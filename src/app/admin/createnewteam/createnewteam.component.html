@@ -1,0 +1,24 @@
+<app-admin></app-admin>
+<br>
+<div class="d-flex justify-content-center">
+
+  <h1 class="display-6">Create Team</h1>
+</div>
+<br> 
+
+
+<form action=""  class="justify-content-center"
+[formGroup]="teamForm" (ngSubmit)="onFormSubmit()">
+
+  <input type="text" formControlName="team" placeholder="  Enter team name" />
+  
+  <input type="text" formControlName="players" placeholder=" Enter players" />
+
+  <input type="text" formControlName="image" placeholder=" Enter imageUrl" />
+
+  <div class="submitBtn d-flex justify-content-around">
+    <button type="submit" class="btn btn-danger" (click)="open()">Submit </button>
+  </div>
+
+
+</form>

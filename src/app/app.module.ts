@@ -3,16 +3,39 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { MatchesComponent } from './matches/matches.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import { MyteamComponent } from './myteam/myteam.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AdminComponent } from './admin/admin.component';
+import { CreatenewteamComponent } from './admin/createnewteam/createnewteam.component';
+import { AllusersComponent } from './admin/allusers/allusers.component';
+import { CreatecontestComponent } from './admin/createcontest/createcontest.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    MatchesComponent,
+    LoginComponent,
+    SignupComponent,
+    MyteamComponent,
+    AdminComponent,
+    CreatenewteamComponent,
+    AllusersComponent,
+    CreatecontestComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
