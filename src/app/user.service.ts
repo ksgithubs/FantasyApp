@@ -6,6 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class UserService {
+
+  // Spring origin
   private springUrl = 'http://localhost:8080';
   allTeams: any;
   userLoginStatus: boolean = false;
