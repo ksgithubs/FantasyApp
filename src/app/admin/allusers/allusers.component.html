@@ -1,19 +1,25 @@
-<app-admin></app-admin>
-<br />
+<!-- Sidebar -->
+<div class="d-flex flex-row"> 
+
+  <div class=" w3-light-grey w3-bar-block" style="width:25%">
+    <app-admin></app-admin>
+    
+  </div>
+<div class="container">
+  <br>
 <div class="d-flex justify-content-center">
   <h1 class="display-5">All Users</h1>
 </div>
-<br />
-
-<div class="container">
+<br><br><br>
     <form [formGroup]="editTable">
       <table class="table">
         <thead class="text-light bg-dark">
           <tr>
+            <th scope="col">FirstName</th>
+            <th scope="col">LastName</th>
             <th scope="col">Username</th>
-            <th scope="col">Password</th>
             <th scope="col">Email</th>
-            <th scope="col">Phone Number</th>
+            <th scope="col">Mobile number</th>
             <th scope="col">Edit/Save</th>
             <th scope="col">Delete</th>
           </tr>
@@ -21,6 +27,30 @@
 
         <tbody>
           <tr *ngFor="let user of allUsers; let i = index">
+            <td>
+              <span *ngIf="!editStatus || editProductIndex !== i">{{
+                user.firstname
+              }}</span>
+
+              <input
+                *ngIf="editStatus && editProductIndex == i"
+                type="text"
+                class="form-control"
+                formControlName="firstname"
+              />
+            </td>
+            <td>
+              <span *ngIf="!editStatus || editProductIndex !== i">{{
+                user.lastname
+              }}</span>
+
+              <input
+                *ngIf="editStatus && editProductIndex == i"
+                type="text"
+                class="form-control"
+                formControlName="lastname"
+              />
+            </td>
             <td>
               <span *ngIf="!editStatus || editProductIndex !== i">{{
                 user.username
@@ -35,18 +65,6 @@
             </td>
             <td>
               <span *ngIf="!editStatus || editProductIndex !== i">{{
-                user.password
-              }}</span>
-
-              <input
-                *ngIf="editStatus && editProductIndex == i"
-                type="text"
-                class="form-control"
-                formControlName="password"
-              />
-            </td>
-            <td>
-              <span *ngIf="!editStatus || editProductIndex !== i">{{
                 user.email
               }}</span>
 
@@ -56,19 +74,21 @@
                 class="form-control"
                 formControlName="email"
               />
-            </td>
-            <td>
+            </td><td>
               <span *ngIf="!editStatus || editProductIndex !== i">{{
-                user.phonenumber
+                user.mobile
               }}</span>
 
               <input
                 *ngIf="editStatus && editProductIndex == i"
                 type="text"
                 class="form-control"
-                formControlName="phonenumber"
+                formControlName="mobile"
               />
             </td>
+            
+
+        
 
             <td>
               <span *ngIf="!editStatus || editProductIndex !== i" type="text">
@@ -107,7 +127,7 @@
                   </svg></button
               ></span>
             </td>
-
+ 
             <td>
               <button class="btn btn-danger pt-1" (click)="delete(i, user)">
                 <svg

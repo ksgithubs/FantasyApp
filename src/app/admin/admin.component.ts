@@ -14,6 +14,10 @@ export class AdminComponent implements OnInit {
   createTeam() {
     this.router.navigateByUrl('admin/createNew');
   }
+  allTeam(){
+    this.router.navigateByUrl('admin/allteams');
+
+  }
   
   showUsers() {
     this.router.navigateByUrl('admin/allusers');

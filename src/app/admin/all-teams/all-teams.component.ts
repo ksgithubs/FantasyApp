@@ -1,13 +1,14 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { SharedService } from '../shared.service';
+import { SharedService } from 'src/app/shared.service';
 
 @Component({
-  selector: 'app-matches',
-  templateUrl: './matches.component.html',
-  styleUrls: ['./matches.component.scss'],
+  selector: 'app-all-teams',
+  templateUrl: './all-teams.component.html',
+  styleUrls: ['./all-teams.component.scss']
 })
-export class MatchesComponent  {
+export class AllTeamsComponent  {
+
 
   constructor(private sService: SharedService ,private router: Router) {}
 
@@ -37,7 +38,6 @@ export class MatchesComponent  {
 
 
   }
-
 
 
 

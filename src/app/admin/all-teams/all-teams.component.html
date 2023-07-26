@@ -1,16 +1,28 @@
-<div></div>
-<br /><br />
+<!-- Sidebar -->
+<div class="d-flex flex-row"> 
+
+<div class=" w3-light-grey w3-bar-block" style="width:25%">
+  <app-admin></app-admin>
+  
+</div>
 
 
+<br> <br>
 
-<div class="container">
+
+<div class="container"><br>
+  <div class="d-flex justify-content-center">
+
+    <h1 class="display-6">All Team</h1>
+  </div>
+  <br> <br> 
   <!-- <form [formGroup]="editTable"> -->
     <table class="table">
       <thead class="text-light bg-dark">
         <tr>
           <th scope="col">ID</th>
           <th scope="col">Name</th>
-          <th scope="col">Captain</th>
+          <th scope="col">Logo</th>
           <th scope="col">Edit/Save</th>
           <th scope="col">Delete</th>
         </tr>
@@ -19,7 +31,9 @@
         <tr *ngFor="let team of teams" >
           <td> {{team.id}}</td>
           <td> {{team.name}}</td>
-          <td> {{team.captain}}</td>
+          <td>
+            <img src="{{team.logo}}" width="50px" alt="">
+          </td>
           <td>         <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -52,3 +66,4 @@
 </div>
 
 
+</div>

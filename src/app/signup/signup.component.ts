@@ -21,21 +21,25 @@ export class SignupComponent {
 
   ngOnInit(): void {
     this.userForm = this.fB.group({
+      firstname:'',
+      lastname:'',
       username: '',
       password: '',
       email: '',
-      phonenumber: '',
+      mobile: 0
     });
   }
 
   
   onFormSubmit() {
+
+    console.log(this.userForm.value)
     this.uService.createUser(this.userForm.value).subscribe({
       next: (res) => {
         console.log('success');
 
-        alert(`${this.userForm.value.username}` + ' User Added Successfully');
-        this.router.navigateByUrl('matches');
+        alert(`${this.userForm.value.firstname}` + ' User Added Successfully');
+        this.router.navigateByUrl('login');
 
       },
     });

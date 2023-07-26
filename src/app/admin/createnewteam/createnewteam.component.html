@@ -1,24 +1,40 @@
-<app-admin></app-admin>
-<br>
-<div class="d-flex justify-content-center">
-
-  <h1 class="display-6">Create Team</h1>
-</div>
-<br> 
-
-
-<form action=""  class="justify-content-center"
-[formGroup]="teamForm" (ngSubmit)="onFormSubmit()">
-
-  <input type="text" formControlName="team" placeholder="  Enter team name" />
-  
-  <input type="text" formControlName="players" placeholder=" Enter players" />
-
-  <input type="text" formControlName="image" placeholder=" Enter imageUrl" />
-
-  <div class="submitBtn d-flex justify-content-around">
-    <button type="submit" class="btn btn-danger" (click)="open()">Submit </button>
+<!-- Sidebar -->
+<div class="d-flex flex-row">
+  <div class="w3-light-grey w3-bar-block" style="width: 25%">
+    <app-admin></app-admin>
   </div>
+  <br />
 
+  <br />
 
-</form>
+  <div class="container">
+    <br><br><br>
+    <div class="d-flex justify-content-center">
+      
+      <h1 class="display-6">Create Team</h1>
+    </div>
+    <br><br>
+    <form
+      action=""
+      class="justify-content-center"
+      [formGroup]="teamForm"
+      (ngSubmit)="onFormSubmit()"
+    >
+      <input
+        type="text"
+        formControlName="name"
+        placeholder="  Enter Team name"
+      />
+
+      <input
+        type="text"
+        formControlName="captain"
+        placeholder=" Enter Captain name"
+      />
+
+      <div class="submitBtn d-flex justify-content-around">
+        <button type="submit" class="btn btn-danger">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

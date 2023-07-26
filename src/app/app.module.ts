@@ -14,6 +14,9 @@ import { AdminComponent } from './admin/admin.component';
 import { CreatenewteamComponent } from './admin/createnewteam/createnewteam.component';
 import { AllusersComponent } from './admin/allusers/allusers.component';
 import { CreatecontestComponent } from './admin/createcontest/createcontest.component';
+import { AllTeamsComponent } from './admin/all-teams/all-teams.component';
+import { UserComponent } from './user/user.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +30,9 @@ import { CreatecontestComponent } from './admin/createcontest/createcontest.comp
     CreatenewteamComponent,
     AllusersComponent,
     CreatecontestComponent,
+    AllTeamsComponent,
+    UserComponent,
+    AdminLoginComponent,
   ],
   imports: [
     BrowserModule,

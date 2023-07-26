@@ -6,15 +6,13 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SharedService } from 'src/app/shared.service';
 
-@Component({ 
+@Component({
   selector: 'app-createnewteam',
   templateUrl: './createnewteam.component.html',
   styleUrls: ['./createnewteam.component.scss'],
 })
 export class CreatenewteamComponent {
-  teamForm: FormGroup | undefined; 
-
-
+  teamForm: FormGroup;
 
   constructor(
     private fB: FormBuilder,
@@ -24,32 +22,24 @@ export class CreatenewteamComponent {
 
   ngOnInit(): void {
     this.teamForm = this.fB.group({
-      team: '',
-      players: '',
-      image: '',
+      name: '',
+      logo: '',
     });
-  }
-
-  
-
-  open(){
-    this.router.navigateByUrl("/admin")  
-  }
-
+  }  
 
 
 
   onFormSubmit() {
-
     this.sService.postTeam(this.teamForm.value).subscribe({
       next: (res) => {
         console.log('success');
 
         alert('Team Added Successfully');
-        this.router.navigateByUrl('matches');
+        this.router.navigateByUrl('admin/allteams');
       },
-
     });
   }
-
+  open() {
+    this.router.navigateByUrl('/admin');
+  }
 }

@@ -10,6 +10,7 @@ import { UserService } from 'src/app/user.service';
 })
 export class AllusersComponent {
   constructor(private userService: UserService, private fb: FormBuilder) {}
+  
   allUsers: any;
   editStatus: boolean;
   editProductIndex: number;
@@ -17,8 +18,17 @@ export class AllusersComponent {
 
   editTable: FormGroup;
 
+
+
   ngOnInit(): void {
-    this.viewUsers();
+    this.userService.getAllUsers().subscribe({
+      next: (res) => {
+        this.allUsers = res;
+
+        console.log(this.allUsers, 'teamssss');
+      },
+    });
+
 
     this.editTable = this.fb.group({
       username: '',
@@ -27,6 +37,8 @@ export class AllusersComponent {
       phonenumber: '',
     });
   }
+
+
 
   viewUsers(){
     
