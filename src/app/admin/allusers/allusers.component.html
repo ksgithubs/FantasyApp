@@ -2,7 +2,7 @@
 <div class="d-flex flex-row"> 
 
   <div class=" w3-light-grey w3-bar-block" style="width:25%">
-    <app-admin></app-admin>
+    <app-admin></app-admin> 
     
   </div>
 <div class="container">
@@ -11,11 +11,12 @@
   <h1 class="display-5">All Users</h1>
 </div>
 <br><br><br>
-    <form [formGroup]="editTable">
+    <form [formGroup]="editTable"> 
       <table class="table">
         <thead class="text-light bg-dark">
           <tr>
             <th scope="col">FirstName</th>
+            <th scope="col">ID</th>
             <th scope="col">LastName</th>
             <th scope="col">Username</th>
             <th scope="col">Email</th>
@@ -27,6 +28,18 @@
 
         <tbody>
           <tr *ngFor="let user of allUsers; let i = index">
+            <td>
+              <span *ngIf="!editStatus || editProductIndex !== i">{{
+                user.id
+              }}</span>
+
+              <input
+                *ngIf="editStatus && editProductIndex == i"
+                type="text"
+                class="form-control"
+                formControlName="id"
+              />
+            </td>
             <td>
               <span *ngIf="!editStatus || editProductIndex !== i">{{
                 user.firstname
@@ -59,7 +72,7 @@
               <input
                 *ngIf="editStatus && editProductIndex == i"
                 type="text"
-                class="form-control"
+                class="form-control"  
                 formControlName="username"
               />
             </td>

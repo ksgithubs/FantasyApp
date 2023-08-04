@@ -1,0 +1,50 @@
+<!-- Sidebar -->
+<div class="d-flex flex-row">
+    <div class="w3-light-grey w3-bar-block" style="width: 25%">
+      <app-admin></app-admin>
+    </div>
+    <br />
+   
+    <br />
+  
+    <div class="container">
+      <br /><br /><br />
+      <div class="d-flex justify-content-center">
+        <h1 class="display-6">Edit Player</h1>
+      </div>
+      <br /><br />
+      <form
+        class="justify-content-center"
+        [formGroup]="editForm"
+        (ngSubmit)="onFormSubmit()"
+      >
+        <input
+          type="text"
+          formControlName="name"
+          placeholder="  Enter Player name"
+        />
+        <input
+          type="text"
+          formControlName="team_name"
+          placeholder="  Enter Team name"
+        />
+        <input
+          type="text"
+          formControlName="skills"
+          placeholder="  Enter Player Skills"
+        />
+        <input
+          type="number"
+          formControlName="points"
+          placeholder="  Enter Player points"
+        />
+        <div class="submitBtn d-flex justify-content-around">
+          <button type="submit" class="btn btn-success">Submit</button>
+          <button (click)="cancel()" type="submit" class="btn btn-danger">
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

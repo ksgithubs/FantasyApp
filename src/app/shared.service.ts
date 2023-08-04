@@ -6,36 +6,28 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class SharedService {
-
-  
-  private springUrl = 'http://localhost:8080';
+  private springUrl = 'http://localhost:8085';
 
   allTeams: any;
 
   constructor(private http: HttpClient) {}
 
-
-
   //get
-  getAllTeams()
-  : Observable<any> {
-
-    return this.http.get<any>(`http://localhost:8080/teams`, {
+  getAllTeams(): Observable<any> {
+    return this.http.get<any>(`${this.springUrl}/teams`, {
       responseType: 'json',
     });
   }
 
-
-  
-
   postTeam(team): Observable<any> {
-
-    return this.http.post((`${this.springUrl}/addTeam`),team)
-    
+    return this.http.post(`${this.springUrl}/addTeam`, team);
   }
 
-  
+  editTeam(modifiedTeam): Observable<any> {
+    return this.http.put(`${this.springUrl}/editteam`, modifiedTeam);
+  }
 
-
-
+  deleteTeam(index) {
+    return this.http.delete(`${this.springUrl}/deleteteam/${index}`);
+  }
 }

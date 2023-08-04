@@ -10,34 +10,49 @@
   <div class="container">
     <br />
     <div class="d-flex justify-content-around">
-      <h1 class="display-6">All Team</h1>
-
-      <button (click)="createTeam()" class="btn btn-primary">New Team</button>
+      <h1 class="display-6">Players</h1>
+      <button (click)="createPlayer()" class="btn btn-primary">
+        New Player
+      </button>
+      <!-- </form> -->
     </div>
-    <br />
-    <br />
-    <!-- <form [formGroup]="editTable"> -->
-    <table class="table table-light  table-hover table-striped" *ngIf="editStatus">
-      <thead class="">
+    <br /><br />
+
+    <table class="table table-dark table-hover table-striped" *ngIf="editStatus">
+      <thead class="text-light bg-dark">
         <tr>
           <th scope="col">ID</th>
           <th scope="col">Name</th>
-          <th scope="col">Logo</th>
+          <th scope="col">Team</th>
+          <th scope="col">Skills</th>
+          <th scope="col">Player Points</th>
           <th scope="col">Edit</th>
           <th scope="col">Delete</th>
         </tr>
       </thead>
 
       <tbody>
-        <tr *ngFor="let team of teams">
-          <td>{{ team.id }}</td>
-          <td>{{ team.name }}</td>
+        <tr *ngFor="let user of allplayers">
           <td>
-            <img src="{{ team.logo }}" width="35px" height="35px" alt="" />
+            <span>{{ user.id }}</span>
           </td>
           <td>
+            <span>{{ user.name }}</span>
+          </td>
+          <td>
+            <span>{{ user.team_name }}</span>
+          </td>
+          <td>
+            <span>{{ user.skills }}</span>
+          </td>
+          <td>
+            <span>{{ user.points }}</span>
+          </td>
+
+          <td>
             <span type="text">
-              <button class="btn btn-success pt-1" (click)="edit(team)">
+              <button class="btn btn-success pt-1" (click)="edit(user)">
+                <!-- Edit -->
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -53,8 +68,9 @@
               </button>
             </span>
           </td>
+
           <td>
-            <button class="btn btn-danger pt-1" (click)="delete(team)">
+            <button class="btn btn-danger pt-1" (click)="delete(user)">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -73,13 +89,24 @@
       </tbody>
     </table>
     <form [formGroup]="editTable" *ngIf="!editStatus">
-
       <h3 class="display-6 kkk  " style="font-size:28px" >
-        <u>Edit Team Data</u>   </h3>
-      <input type="text" value="" class="form-control" formControlName="name" />
-      
-      <input type="text" class="form-control" formControlName="logo" />
+      <u>Edit Player Data</u>   </h3>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="name"
+      />
 
+
+      
+      <input type="text" class="form-control" formControlName="team_name" />
+      <input
+        type="text"
+        class="form-control"
+        placeholder="skills"
+        formControlName="skills"
+      />
+      <input type="text" class="form-control" formControlName="points" />
       <div class="d-flex justify-content-center">
         <button type="submit" class="btn btn-success me-5" (click)="save()">
           submit
@@ -87,13 +114,12 @@
         <button type="submit" class="btn btn-danger" (click)="cancel()">
           Cancel
         </button>
-        <br>
       </div>
     </form>
     <br>
     <div class="d-flex justify-content-around">
-      <button (click)="createTeam()" class="btn btn-primary">New Team</button>
-    </div>
-    <!-- </form> -->
+      <button (click)="createPlayer()" class="btn btn-primary">
+        New Player
+      </button>    </div>
   </div>
 </div>

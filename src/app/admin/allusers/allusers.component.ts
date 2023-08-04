@@ -18,14 +18,13 @@ export class AllusersComponent {
 
   editTable: FormGroup;
 
-
+ 
 
   ngOnInit(): void {
     this.userService.getAllUsers().subscribe({
       next: (res) => {
         this.allUsers = res;
 
-        console.log(this.allUsers, 'teamssss');
       },
     });
 
@@ -34,7 +33,7 @@ export class AllusersComponent {
       username: '',
       email: '',
       password: '',
-      phonenumber: '',
+      mobile: '',
     });
   }
 
@@ -46,7 +45,6 @@ export class AllusersComponent {
       next: (res) => {
         this.allUsers = res;
 
-        console.log(this.allUsers, 'teamssss');
       },
     });
   }
@@ -60,7 +58,7 @@ export class AllusersComponent {
       username: user.username,
       email: user.email,
       password: user.password,
-      phonenumber: user.phonenumber,
+      phonenumber: user.mobile,
     });
   }
   save() {
@@ -72,7 +70,6 @@ export class AllusersComponent {
 
     this.userService.editUser(this.editTable.value).subscribe({
       next:(res)=>{
-        console.log(res);
         this.viewUsers();      }
     })
 
@@ -83,11 +80,9 @@ export class AllusersComponent {
     
     this.id = user.id;
 
-    console.log(this.id);
     this.userService.deleteUser(this.id).subscribe(
       {
         next:(res)=>{
-          console.log(res);
           this.viewUsers();      }
       }
     )

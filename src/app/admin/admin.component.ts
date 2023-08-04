@@ -14,18 +14,33 @@ export class AdminComponent implements OnInit {
   createTeam() {
     this.router.navigateByUrl('admin/createNew');
   }
-  allTeam(){
+  allTeam() {
     this.router.navigateByUrl('admin/allteams');
-
   }
-  
+
   showUsers() {
     this.router.navigateByUrl('admin/allusers');
   }
 
+  result() {
+    this.router.navigateByUrl('admin/result');
+  }
+  live() {
+    this.router.navigateByUrl('admin/livematches');
+  }
+  fixtures() {
+    this.router.navigateByUrl('admin/fixtures');
+  }
+  rules() {
+    this.router.navigateByUrl('admin/rules');
+  }
+  players() {
+    this.router.navigateByUrl('admin/players');
+  }
   createContest() {
     this.router.navigateByUrl('admin/createContest');
   }
-
-
+  password() {
+    this.router.navigateByUrl('admin/password');
+  }
 }

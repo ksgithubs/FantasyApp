@@ -11,8 +11,14 @@ input {
     &:focus {
       outline: none;
     }
-   
+    &:hover {
+      &:hover {
+        background-color: rgb(255, 171, 171);
+      }
+    }
   }
+
+
   .submitBtn {
     display: block;
     margin: auto auto;

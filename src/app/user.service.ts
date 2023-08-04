@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class UserService {
+export class UserService { 
 
   // Spring origin
   private springUrl = 'http://localhost:8080';
@@ -31,7 +31,7 @@ export class UserService {
     return this.http.put(
       `${this.springUrl}/editUser/${modifiedUser.id}`,
       modifiedUser
-    );
+    ); 
   }
 
   deleteUser(index) {

@@ -39,7 +39,10 @@ export class CreatenewteamComponent {
       },
     });
   }
-  open() {
-    this.router.navigateByUrl('/admin');
+
+  cancel(){
+    this.router.navigateByUrl('admin/allteams');
+
   }
+
 }

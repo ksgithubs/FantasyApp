@@ -17,6 +17,14 @@ import { CreatecontestComponent } from './admin/createcontest/createcontest.comp
 import { AllTeamsComponent } from './admin/all-teams/all-teams.component';
 import { UserComponent } from './user/user.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { PlayerComponent } from './admin/player/player.component';
+import { NewplayerComponent } from './admin/newplayer/newplayer.component';
+import { FixturesComponent } from './admin/fixtures/fixtures.component';
+import { ResultComponent } from './admin/result/result.component';
+import { ChangepasswordComponent } from './admin/changepassword/changepassword.component';
+import { RulesComponent } from './admin/rules/rules.component';
+import { LivematchComponent } from './admin/livematch/livematch.component';
+import { EditplayerComponent } from './admin/editplayer/editplayer.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +41,14 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
     AllTeamsComponent,
     UserComponent,
     AdminLoginComponent,
+    PlayerComponent,
+    NewplayerComponent,
+    FixturesComponent,
+    ResultComponent,
+    ChangepasswordComponent,
+    RulesComponent,
+    LivematchComponent,
+    EditplayerComponent,
   ],
   imports: [
     BrowserModule,
