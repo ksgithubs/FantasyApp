@@ -78,7 +78,7 @@ export class PlayerComponent implements OnInit {
     ) {
       this.playerService.deletePlayer(this.id).subscribe({
         next: (res) => {
-          alert(`Player data of ---- deleted Successfully`);
+          alert(`Player data of ---- deleeted Successfully`);
           this.viewPlayers();
         },
       });
